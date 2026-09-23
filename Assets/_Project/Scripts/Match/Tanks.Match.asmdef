@@ -1,0 +1,17 @@
+{
+    "name": "Tanks.Match",
+    "rootNamespace": "Tanks.Match",
+    "references": [
+        "Tanks.Core",
+        "Mirror"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

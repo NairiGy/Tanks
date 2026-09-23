@@ -1,0 +1,17 @@
+{
+    "name": "Tanks.Core",
+    "rootNamespace": "Tanks.Core",
+    "references": [
+        "Mirror",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
