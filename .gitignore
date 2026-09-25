@@ -69,8 +69,3 @@ crashlytics-build.properties
 # Claude Code local tool config (not part of the Unity project)
 /.claude/
 
-# ---- This project's own excludes ----
-# Third-party art/asset packages (Isle of Assets, Kucher, UnityTechnologies, YughuesFreeBushes2018,
-# Ciathyza) are not redistributed here; see README for what they are and where to get them.
-/[Aa]ssets/ThirdParty/
-/[Aa]ssets/ThirdParty.meta

@@ -32,7 +32,7 @@ Project layout:
 Assets/
   _Project/   your own content: Scripts, Prefabs, Scenes, Data, Settings, Sounds, Sprites, Textures, Tests
   Mirror/     networking library (MIT, included)
-  ThirdParty/ third-party art/audio (not included, see below)
+  ThirdParty/ only the third-party art/audio files the game actually uses (see below)
 ```
 
 ## Requirements
@@ -43,13 +43,14 @@ Assets/
 ## Getting started
 
 1. Clone the repo.
-2. Re-download the third-party art assets listed below into `Assets/ThirdParty/` (the game will run without them, just without their visuals/audio; missing-reference warnings on those specific objects are expected until they're re-imported).
-3. Open the project in Unity Hub.
-4. Open `Assets/_Project/Scenes/SampleScene.unity` and press Play to host, or open the Test Runner (**Window → General → Test Runner → EditMode**) to run the unit tests.
+2. Open the project in Unity Hub (Unity resolves the packages itself on first open).
+3. Open `Assets/_Project/Scenes/SampleScene.unity` and press Play to host, or open the Test Runner (**Window → General → Test Runner → EditMode**) to run the unit tests.
+
+Everything the game needs is in the repository; nothing has to be downloaded separately.
 
 ## Third-party assets
 
-Third-party art and audio are **not included** in this repository (excluded via `.gitignore`) and need to be re-downloaded separately if you want the original visuals. This project does not redistribute their source files — each is used here under its own publisher's license.
+Only the third-party files the game actually uses are kept in `Assets/ThirdParty/`, so the project works right after cloning. They remain the property of their publishers and are used under the licenses below; they are not covered by this repository's MIT license. If a publisher objects to their content being included here, it will be removed.
 
 | Asset | Publisher | Source | License |
 |---|---|---|---|
@@ -59,9 +60,9 @@ Third-party art and audio are **not included** in this repository (excluded via 
 | Particle Pack | Unity Technologies | bundled Unity example content | Unity Companion License |
 | Free Bushes | Yughues | [OpenGameArt](https://opengameart.org/content/bushes) ([Asset Store mirror](https://assetstore.unity.com/packages/3d/vegetation/plants/yughues-free-bushes-13168)) | CC0 |
 
-The three Unity Asset Store entries are listed under the Standard Unity Asset Store EULA, which is the default unless a listing states otherwise — worth checking the current listing yourself before any commercial use.
+The three Unity Asset Store entries are listed under the Standard Unity Asset Store EULA, which is the default unless a listing states otherwise — check the current listing before any commercial use, and for the full packages get them from the links above (only the files this game uses are included here).
 
-**Mirror is included** in this repository (`Assets/Mirror/`) under the MIT License (`Assets/Mirror/LICENSE`), since the project can't compile without it.
+**Mirror** is included (`Assets/Mirror/`) under the MIT License (`Assets/Mirror/LICENSE`).
 
 ## License
 
