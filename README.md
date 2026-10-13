@@ -1,6 +1,8 @@
 # Tanks
 
-A multiplayer top-down tank battle game built in Unity with [Mirror](https://mirror-networking.com/) networking. Two teams fight over team-deathmatch and base-capture objectives, with server-authoritative bots that can fill either team.
+A multiplayer third-person tank battle game built in Unity with [Mirror](https://mirror-networking.com/) networking. Two teams fight over team-deathmatch and base-capture objectives, with server-authoritative bots that can fill either team.
+
+![Aiming through the scope and landing a penetrating hit on an enemy tank](docs/media/scope-hit.gif)
 
 ## Gameplay
 
@@ -8,6 +10,14 @@ A multiplayer top-down tank battle game built in Unity with [Mirror](https://mir
 - Two win conditions run per match: team deathmatch (eliminate the other team) and base capture (hold the enemy base's zone).
 - Bots drive, aim, fire and navigate on the server. Each picks a role (Capturer, Defender or all-rounder), and every team gets at least one Capturer and one Defender.
 - Tanks have armor, several ammo types, disguise/spotting (bushes reduce visibility) and destructible tracks.
+
+| Third-person view | Scoped hit |
+|---|---|
+| ![Third-person view with timer, scoreboard, minimap and crosshair, destroyed enemy tanks in the distance](docs/media/hud-overview.jpg) | ![Scope view with a penetration hit message over an enemy tank and a shell tracer](docs/media/scope-penetration.jpg) |
+
+| Track repair | Winning a match |
+|---|---|
+| ![A damaged left track repairing, shown as a percentage in the top-left corner](docs/media/track-repair.jpg) | ![Track repair, a scoped hit and the Victory banner at the end of a match](docs/media/match-win.gif) |
 
 ## Architecture
 
