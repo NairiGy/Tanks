@@ -22,22 +22,32 @@ namespace Tanks.Core
         {
             player = GetComponent<Player>();
             vehicleCamera = Camera.main.GetComponent<VehicleCamera>();
+            actions = new InputSystem_Actions();
         }
 
         private void Start()
         {
-            actions = new InputSystem_Actions();
-            actions.Enable();
-
             if (vehicleCamera != null)
             {
                 vehicleCamera.ShouldRotateTarget = false;
             }
         }
 
+        // The component is switched off at match end and back on at restart,
+        // so the actions must follow every enable, not just the first one.
+        private void OnEnable()
+        {
+            actions.Enable();
+        }
+
         private void OnDisable()
         {
             actions.Disable();
+        }
+
+        private void OnDestroy()
+        {
+            actions.Dispose();
         }
 
         private void Update()
