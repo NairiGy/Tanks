@@ -10,6 +10,9 @@ namespace Tanks.Core
 
         public static int TeamIdCounter;
 
+        /// <summary>Nickname the local player sends to the server on connect. Set by the main menu.</summary>
+        public static string LocalNickname = "Player";
+
         public static Player Local
         {
             get
@@ -57,7 +60,7 @@ namespace Tanks.Core
 
             if (!isOwned) return;
             
-            CmdSetNickname(NetworkManager.singleton.GetComponent<NetworkManagerHUD>().Nickname);
+            CmdSetNickname(LocalNickname);
             CmdSpawnVehicle();
         }
 
@@ -136,6 +139,11 @@ namespace Tanks.Core
 
             ActiveVehicle.SetInputControl(Vector3.zero);
             vehicleInputControl.enabled = false;
+        }
+
+        public void HandleMatchStarted()
+        {
+            vehicleInputControl.enabled = true;
         }
 
         [Command]

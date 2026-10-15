@@ -131,6 +131,7 @@ namespace Tanks.Match
         {
             Time.timeScale = 1f;
 
+            Player.Local?.HandleMatchStarted();
             MatchStart?.Invoke();
         }
 

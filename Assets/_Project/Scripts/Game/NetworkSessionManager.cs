@@ -2,6 +2,7 @@ using Mirror;
 using Tanks.Core;
 using Tanks.Match;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Tanks.Game
 {
@@ -34,6 +35,33 @@ namespace Tanks.Game
             Player.TeamIdCounter = 0;
 
             SpawnBots();
+        }
+
+        private bool isQuitting;
+
+        /// <summary>Leaves the current session from any mode. The scene then reloads back to the main menu.</summary>
+        public void LeaveSession()
+        {
+            if (NetworkServer.active && NetworkClient.isConnected) StopHost();
+            else if (NetworkClient.active) StopClient();
+            else if (NetworkServer.active) StopServer();
+        }
+
+        // Runs when the local client stops for any reason: leaving, the host shutting down,
+        // or a failed connection. Reloading the scene resets the map and all match state.
+        public override void OnStopClient()
+        {
+            base.OnStopClient();
+
+            if (isQuitting) return;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public override void OnApplicationQuit()
+        {
+            isQuitting = true;
+            base.OnApplicationQuit();
         }
 
         private void SpawnBots()

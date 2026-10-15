@@ -7,6 +7,9 @@ namespace Tanks.Core
     {
         private const float AimDistance = 1000;
 
+        /// <summary>True while a menu is open: the tank stops and the camera ignores the mouse.</summary>
+        public static bool IsBlocked;
+
         [SerializeField] private Vector3 cameraOffset;
 
         private Player player;
@@ -42,6 +45,13 @@ namespace Tanks.Core
             if (player == null) return;
             if (player.ActiveVehicle == null) return;
             if (!player.isOwned || !player.isLocalPlayer) return;
+
+            if (IsBlocked)
+            {
+                ActiveVehicle.SetInputControl(Vector3.zero);
+                vehicleCamera.RotationControl = Vector2.zero;
+                return;
+            }
 
             Vector2 move = actions.Player.Move.ReadValue<Vector2>();
             ActiveVehicle.SetInputControl(new Vector3(move.x, actions.Player.Jump.ReadValue<float>(), move.y));
