@@ -6,7 +6,7 @@ A multiplayer third-person tank battle game built in Unity with [Mirror](https:/
 
 ## Gameplay
 
-- Host or join a match.
+- Main menu: host a match or join one by address. Esc opens an in-match menu; after a match the host can start the next one.
 - Two win conditions run per match: team deathmatch (eliminate the other team) and base capture (hold the enemy base's zone).
 - Bots drive, aim, fire and navigate on the server. Each picks a role (Capturer, Defender or all-rounder), and every team gets at least one Capturer and one Defender.
 - Tanks have armor, several ammo types, disguise/spotting (bushes reduce visibility) and destructible tracks.
@@ -18,6 +18,23 @@ A multiplayer third-person tank battle game built in Unity with [Mirror](https:/
 | Track repair | Winning a match |
 |---|---|
 | ![A damaged left track repairing, shown as a percentage in the top-left corner](docs/media/track-repair.jpg) | ![Track repair, a scoped hit and the Victory banner at the end of a match](docs/media/match-win.gif) |
+
+## Play
+
+Download the Windows build from [Releases](https://github.com/NairiGy/Tanks/releases/latest), unzip it and run `Tanks.exe`.
+
+- **Solo:** click **Host game**. Bots fill both teams.
+- **With a friend on the same network:** one player clicks **Host game**; the other types the host's IP address and clicks **Join game**. The game uses UDP port 7777, so allow it if Windows Firewall asks.
+
+| Action | Input |
+|---|---|
+| Drive | W A S D |
+| Brake | Space |
+| Aim | Mouse |
+| Fire | Left mouse button |
+| Zoom (scope) | Right mouse button |
+| Ammo type | 1 / 2 |
+| Menu | Esc |
 
 ## Architecture
 
@@ -47,7 +64,7 @@ Assets/
 Requires Unity 6000.3.11f1 (or a compatible 6000.3.x).
 
 1. Clone the repo and open it in Unity Hub.
-2. Open `Assets/_Project/Scenes/SampleScene.unity` and press Play to host.
+2. Open `Assets/_Project/Scenes/SampleScene.unity`, press Play, then click **Host game**.
 3. To run the unit tests: **Window → General → Test Runner → EditMode**.
 
 ## Third-party assets
@@ -60,6 +77,7 @@ Requires Unity 6000.3.11f1 (or a compatible 6000.3.x).
 | Tank Leopard2 | Kucher | [Unity Asset Store](https://assetstore.unity.com/packages/3d/vehicles/land/tank-leopard2-264329) | Standard Unity Asset Store EULA |
 | Gridbox Prototype Materials | Ciathyza | [Unity Asset Store](https://assetstore.unity.com/packages/2d/textures-materials/gridbox-prototype-materials-129127) | Standard Unity Asset Store EULA |
 | Unity Particle Pack | Unity Technologies | Unity Asset Store | Standard Unity Asset Store EULA |
+| TextMesh Pro Essential Resources (in the Particle Pack's `TextMesh Pro` folder) | Unity Technologies | `com.unity.ugui` package | Unity Companion License; LiberationSans font under SIL OFL |
 | Free Bushes | Yughues | [OpenGameArt](https://opengameart.org/content/bushes) | CC0 |
 
 Asset Store items are under the standard EULA unless their listing says otherwise. Mirror (`Assets/Mirror/`) is MIT licensed; see `Assets/Mirror/LICENSE`.
